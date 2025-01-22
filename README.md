@@ -70,6 +70,11 @@ four 1-bit I/Q samples into a single byte.
 You can use [bladeplayer](https://github.com/osqzss/gps-sdr-sim/tree/master/player)
 for bladeRF to playback the compressed file.
 
+### Easy Use
+- in the file nasa2.sh you will find auto download Nasa (brdc) file and compile .bin file & run on BladeRF with BiasTee TX 1 & TX 2 enabled.
+- here you can set the lat & long:
+- sudo /home/ubuntu/gps-sdr-sim/gps-sdr-sim -e /home/ubuntu/gps-sdr-sim/"brdc""$day""0.$yr""n" -l 5.5631,-0.1918,10 -d 600
+
 ```
 Usage: gps-sdr-sim [options]
 Options:
@@ -166,6 +171,44 @@ Set RF bandwidth:
 > plutoplayer -t gpssim.bin -b 3.0
 ```
 Default 3.0MHz. Applicable range 1.0MHz to 5.0MHz.
+
+
+### Auto Start Script
+-----------
+
+# change file path
+in Nasa.Service set 
+
+# MAIN SERVICE 
+[Service]
+ExecStart=bash /home/ubuntu/gps-sdr-sim/nasa2.sh
+
+sudo su 
+cp -rfapv nasa.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable nasa.service
+systemctl start nasa.service
+
+# check logs
+journalctl -u nasa.service -f
+
+
+# RESTART SERVICE
+
+cp nasa_restart.service /etc/systemd/system/
+systemctl daemon-reload
+journalctl -u nasa_restart.service -f
+
+
+
+# RESTART TIMER
+
+systemctl daemon-reload
+systemctl list-timers
+cp -rfapv nasa_restart.timer /etc/systemd/system/                                                                      
+systemctl start nasa_restart.timer
+systemctl enable nasa_restart.timer
+systemctl list-timers
 
 ### License
 
