@@ -71,10 +71,12 @@ You can use [bladeplayer](https://github.com/osqzss/gps-sdr-sim/tree/master/play
 for bladeRF to playback the compressed file.
 
 ### Easy Use
-- in the file nasa2.sh you will find auto download Nasa (brdc) file and compile .bin file & run on BladeRF with BiasTee TX 1 & TX 2 enabled.
-- here you can set the lat & long:
-- sudo /home/ubuntu/gps-sdr-sim/gps-sdr-sim -e /home/ubuntu/gps-sdr-sim/"brdc""$day""0.$yr""n" -l 5.5631,-0.1918,10 -d 600
-
+```
+in the file nasa2.sh you will find auto download Nasa (brdc) file and compile .bin file & run on BladeRF with BiasTee TX 1 & TX 2 enabled.
+```
+- in flile nasa2.sh here you can set the lat & long:
+```
+sudo /home/ubuntu/gps-sdr-sim/gps-sdr-sim -e /home/ubuntu/gps-sdr-sim/"brdc""$day""0.$yr""n" -l 5.5631,-0.1918,10 -d 600
 ```
 Usage: gps-sdr-sim [options]
 Options:
