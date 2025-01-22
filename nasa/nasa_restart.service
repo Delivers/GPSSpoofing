@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart Nasa
+
+[Service]
+Type=oneshot
+ExecStart=systemctl restart nasa.service

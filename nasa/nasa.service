@@ -1,0 +1,11 @@
+[Unit]
+Description=Starts Nasa download and bladeRf
+After=network.target
+
+[Service]
+ExecStart=bash /home/ubuntu/gps-sdr-sim/nasa2.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

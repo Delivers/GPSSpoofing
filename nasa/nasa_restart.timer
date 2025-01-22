@@ -1,0 +1,9 @@
+[Unit]
+Description=Restart nasa timer
+
+[Timer]
+OnCalendar=*-*-* 17:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

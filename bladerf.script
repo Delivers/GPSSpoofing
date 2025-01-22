@@ -1,0 +1,8 @@
+set frequency 1575.42M
+set samplerate 2.6M
+set bandwidth 2.5M
+set biastee tx1 on
+set gain tx1 60
+tx config file=gpssim.bin format=bin repeat=10000
+tx start
+tx wait 

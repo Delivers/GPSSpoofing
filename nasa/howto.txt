@@ -1,0 +1,32 @@
+# Howto
+-----------
+
+# MAIN SERVICE 
+
+sudo su 
+cp -rfapv nasa.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable nasa.service
+systemctl start nasa.service
+
+# check logs
+journalctl -u nasa.service -f
+
+
+# RESTART SERVICE
+
+cp nasa_restart.service /etc/systemd/system/
+systemctl daemon-reload
+journalctl -u nasa_restart.service -f
+
+
+
+# RESTART TIMER
+
+systemctl daemon-reload
+systemctl list-timers
+cp -rfapv nasa_restart.timer /etc/systemd/system/                                                                      
+systemctl start nasa_restart.timer
+systemctl enable nasa_restart.timer
+systemctl list-timers
+
