@@ -78,7 +78,8 @@ in the file nasa2.sh you will find auto download Nasa (brdc) file and compile .b
 ```
 sudo /home/ubuntu/gps-sdr-sim/gps-sdr-sim -e /home/ubuntu/gps-sdr-sim/"brdc""$day""0.$yr""n" -l 5.5631,-0.1918,10 -d 600
 ```
-Usage: gps-sdr-sim [options]
+
+### Usage: gps-sdr-sim [options]
 Options:
   -e <gps_nav>     RINEX navigation file for GPS ephemerides (required)
   -u <user_motion> User motion file (dynamic mode)
