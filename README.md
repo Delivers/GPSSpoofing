@@ -82,6 +82,7 @@ sudo /home/ubuntu/gps-sdr-sim/gps-sdr-sim -e /home/ubuntu/gps-sdr-sim/"brdc""$da
 ```
 
 ### Usage: gps-sdr-sim [options]
+```
 Options:
   -e <gps_nav>     RINEX navigation file for GPS ephemerides (required)
   -u <user_motion> User motion file (dynamic mode)
